@@ -1,0 +1,17 @@
+service: first-serverless-prj
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  profile: default
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+
+plugins:
+  - serverless-offline
